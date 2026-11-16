@@ -1,6 +1,6 @@
-# Contributor Covenant Code of Conduct
+# SADA Code of Conduct
 
-This project adopts the Contributor Covenant, version 2.1. It applies to repository issues, pull requests, discussions, project spaces, and people acting as SADA representatives.
+This project uses a concise, project-adapted Code of Conduct based on the Contributor Covenant, version 2.1. It applies to repository issues, pull requests, discussions, project spaces, and people acting as SADA representatives. This document is an adaptation, not the complete unmodified Contributor Covenant text.
 
 ## Our Pledge
 
