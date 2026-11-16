@@ -47,8 +47,10 @@ jobs:
           cache: false
       - name: Install actionlint
         run: go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
+      - name: Add Go tools to PATH
+        run: echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
       - name: Validate GitHub Actions workflows
-        run: "$(go env GOPATH)/bin/actionlint -color"
+        run: actionlint -color
       - name: Install pre-commit for YAML validation
         run: python3 -m pip install --disable-pip-version-check pre-commit==4.3.0
       - name: Validate pre-commit configuration
