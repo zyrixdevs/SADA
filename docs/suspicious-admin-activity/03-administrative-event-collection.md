@@ -21,6 +21,7 @@ Related modules: [Early Raid Detection](../early-raid-detection/README.md), [Inc
 ## Open decisions and implementation state
 
 Baseline; maintenance annotations; notification privacy; thresholds. Proposed phase: 4 after attribution tests. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Attribution workflow
 
 Match an observed action to a recent audit entry using action type, target object, guild, and a bounded time window. Persist attribution state as exact_match, ambiguous, missing, or stale, plus audit entry ID and lookup time. Never assign the nearest actor when multiple candidates match. A moderator-provided reason remains an attributed statement. Permission change, mass ban, channel delete, webhook create, and integration change use separate event types and schemas.

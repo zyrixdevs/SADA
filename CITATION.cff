@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: >-
+  If you use or adapt SADA, please cite the project and preserve the attribution
+  and license notices described in NOTICE and LICENSE.
+title: SADA Security Intelligence Platform
+type: software
+repository-code: https://github.com/zyrixdevs/SADA
+license: Apache-2.0
+authors:
+  - name: SADA contributors

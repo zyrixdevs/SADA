@@ -42,6 +42,7 @@ Risks include False identity links, shared accounts, mimicry, discriminatory pro
 ## Dependencies and integration
 
 Ban Evasion Intelligence connects with:
+
 - [Threat Intelligence Network](../threat-intelligence-network/README.md)
 - [Threat DNA](../threat-dna/README.md)
 - [Incident Timeline](../incident-timeline/README.md)

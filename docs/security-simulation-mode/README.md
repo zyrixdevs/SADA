@@ -42,6 +42,7 @@ Risks include Environment crossing, credential leak, synthetic/real confusion. E
 ## Dependencies and integration
 
 Security Simulation Mode connects with:
+
 - [Early Raid Detection](../early-raid-detection/README.md)
 - [Suspicious Admin Activity](../suspicious-admin-activity/README.md)
 - [Threat DNA](../threat-dna/README.md)

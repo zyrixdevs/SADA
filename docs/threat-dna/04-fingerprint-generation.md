@@ -21,6 +21,7 @@ Related modules: [Early Raid Detection](../early-raid-detection/README.md), [Sca
 ## Open decisions and implementation state
 
 Allowed features; key rotation; scope; threshold; evaluation corpus. Proposed phase: 3 after privacy review and synthetic corpus. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Fingerprint pipeline
 
 Input extraction is an allowlist by event type. Convert timestamps to coarse buckets, action sequences to enumerated tokens, URLs to normalized indicator references, and approved template signatures to keyed digests. Drop author prose, private message bodies, attachments, and unrelated user data. Store feature-set and normalization version beside every digest so rotation or rule changes can invalidate old comparisons. Candidate similarity reports the matching dimensions and missing dimensions; collision handling sends both records to review rather than merging them.

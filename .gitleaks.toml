@@ -1,0 +1,12 @@
+title = "SADA repository secret scanning"
+
+[allowlist]
+description = "A synthetic Discord user ID used only in the shared event schema example; not a credential."
+condition = "AND"
+regexTarget = "match"
+regexes = [
+  '''234567890123456789''',
+]
+paths = [
+  '''docs/shared-standards/01-event-schema-standard\.md''',
+]

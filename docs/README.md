@@ -96,3 +96,13 @@ SADA is a proposed independent security intelligence platform for explicitly opt
 The shared contracts are authoritative for event schemas, evidence, severity, confidence, cases, API errors, idempotency and audit. Feature modules own only domain projections and reference canonical records. Rust is proposed for SADA Core; PostgreSQL is authoritative; Python Zyrix adapter owns Discord credentials and actions.
 
 Every module is proposed. Scores and anomaly findings are review leads, never punishment authority. Guild opt-ins are separate and disabled by default; SADA Core has no Discord token or moderation capability. See the [project roadmap](implementation-roadmap/README.md) and [open decisions](implementation-roadmap/06-open-questions-and-decisions.md).
+
+## Engineering and repository operations
+
+- [Engineering documentation](engineering/README.md)
+- [Development standards](engineering/DEVELOPMENT-STANDARDS.md)
+- [CI/CD strategy](engineering/CI-CD-STRATEGY.md)
+- [GitHub repository setup](engineering/GITHUB-REPOSITORY-SETUP.md)
+- [Release process](engineering/RELEASE-PROCESS.md)
+- [Quality assurance](engineering/QUALITY-ASSURANCE.md)
+- [Third-party notices](engineering/THIRD-PARTY-NOTICES.md)

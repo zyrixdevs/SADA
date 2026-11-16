@@ -42,6 +42,7 @@ Risks include Urgency abuse, compromised approver, stale case, duplicate/destruc
 ## Dependencies and integration
 
 Emergency Response Playbooks connects with:
+
 - [Early Raid Detection](../early-raid-detection/README.md)
 - [Scam and Phishing Intelligence](../scam-and-phishing-intelligence/README.md)
 - [Suspicious Admin Activity](../suspicious-admin-activity/README.md)

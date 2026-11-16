@@ -42,6 +42,7 @@ Risks include Over-connection, hijack, stale infrastructure, circular corroborat
 ## Dependencies and integration
 
 Attack Campaign Tracker connects with:
+
 - [Threat Intelligence Network](../threat-intelligence-network/README.md)
 - [Threat DNA](../threat-dna/README.md)
 - [Scam and Phishing Intelligence](../scam-and-phishing-intelligence/README.md)

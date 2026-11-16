@@ -1,0 +1,10 @@
+{
+  "config": {
+    "default": true,
+    "MD013": false, // Long API examples, links, and tables stay readable without forced wrapping.
+    "MD041": false, // Existing provenance notices may precede the document title.
+    "MD050": false, // Preserves established emphasis styles in the original specifications.
+    "MD060": false // Existing tables use Markdown alignment that varies by renderer.
+  },
+  "globs": ["**/*.md", "!**/node_modules/**", "!.git/**"]
+}

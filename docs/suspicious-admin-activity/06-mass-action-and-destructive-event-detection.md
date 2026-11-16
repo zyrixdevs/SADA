@@ -21,6 +21,7 @@ Related modules: [Early Raid Detection](../early-raid-detection/README.md), [Inc
 ## Open decisions and implementation state
 
 Baseline; maintenance annotations; notification privacy; thresholds. Proposed phase: 4 after attribution tests. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Destructive sequence detection
 
 Aggregate action count by actor-attribution state and action class over configurable windows; separately detect repeated role deletion, channel deletion, mass ban/kick, webhook creation, and permission escalation. Compare to guild-specific maintenance annotations and historical baselines, but do not suppress raw events. An alert cites the actions and attribution confidence. Unknown actor or missing audit log lowers attribution certainty and cannot become a compromised-account accusation.

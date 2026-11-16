@@ -42,6 +42,7 @@ Risks include Overbroad permissions, stale snapshot, leakage, mistaken risk clas
 ## Dependencies and integration
 
 Security Health Monitor connects with:
+
 - [Incident Recovery Assistant](../incident-recovery-assistant/README.md)
 - [Incident Timeline](../incident-timeline/README.md)
 - [Evidence Vault](../evidence-vault/README.md)

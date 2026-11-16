@@ -42,6 +42,7 @@ Risks include Dictionary attacks, re-identification, mutation, collision, overfi
 ## Dependencies and integration
 
 Threat DNA connects with:
+
 - [Early Raid Detection](../early-raid-detection/README.md)
 - [Scam and Phishing Intelligence](../scam-and-phishing-intelligence/README.md)
 - [Threat Intelligence Network](../threat-intelligence-network/README.md)

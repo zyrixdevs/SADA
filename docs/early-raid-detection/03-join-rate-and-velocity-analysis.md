@@ -21,6 +21,7 @@ Related modules: [Threat Dna](../threat-dna/README.md), [Incident Timeline](../i
 ## Open decisions and implementation state
 
 Baseline windows; sample sizes; alert thresholds; account-age use; retention. Proposed phase: 4 after local events and consent. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Rate calculation
 
 For event window w, compute J(w) = eligible joins in the window divided by elapsed seconds; separately retain raw count and window completeness. Exclude bot joins only under a documented rule and keep join/leave/rejoin treatment explicit. Compare against a guild-specific time-of-week baseline with sample count and seasonality metadata. Use configurable windows and minimum sample gates; their values are unresolved and must be evaluated on synthetic and consented historical aggregates. Missing gateway intervals mark the window incomplete rather than lowering the rate.

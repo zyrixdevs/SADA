@@ -21,6 +21,7 @@ Related modules: [Early Raid Detection](../early-raid-detection/README.md), [Sus
 ## Open decisions and implementation state
 
 Local/staging/hosted; scenario review. Proposed phase: 4 after fixtures and isolation. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Isolation controls
 
 Simulation uses a synthetic tenant namespace, separate database/schema or a type-enforced simulation ID, fake Discord transport, and egress policy that denies Discord mutation domains. Production delivery workers reject simulation IDs at the database boundary. Scenario fixtures are reviewed and versioned; exports are labeled synthetic. A safety test fails if a simulated event can create a production case, advisory, enforcement job, or local action receipt.

@@ -21,6 +21,7 @@ Related modules: [Incident Timeline](../incident-timeline/README.md), [Trust And
 ## Open decisions and implementation state
 
 Evidence classes; duration; rights; provider; hold authority. Proposed phase: 1 policy before capture. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Read and export controls
 
 Authorize a read against case membership, reviewer role, purpose, evidence classification, and current appeal/hold state. Issue short-lived object access only after the authorization decision; do not expose stable storage keys to clients. Log requester, evidence ID, purpose, time, result, and export form without copying the content into logs. Revoke access on role change and key rotation. A hash mismatch quarantines the object and prevents reviewer reliance.

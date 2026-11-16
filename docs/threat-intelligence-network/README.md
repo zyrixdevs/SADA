@@ -42,6 +42,7 @@ Risks include Sybil reports, collusion, graph traversal leakage, evidence poison
 ## Dependencies and integration
 
 Threat Intelligence Network connects with:
+
 - [Threat DNA](../threat-dna/README.md)
 - [Incident Timeline](../incident-timeline/README.md)
 - [Evidence Vault](../evidence-vault/README.md)

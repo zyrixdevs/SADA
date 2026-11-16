@@ -21,6 +21,7 @@ Related modules: [Threat Dna](../threat-dna/README.md), [Incident Timeline](../i
 ## Open decisions and implementation state
 
 Baseline windows; sample sizes; alert thresholds; account-age use; retention. Proposed phase: 4 after local events and consent. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Pattern inputs
 
 Use per-window aggregates: messages per channel, unique authors, mention count, distinct mentioned members, repeated-template digest count where approved, and event time spread. Never upload message bodies for network matching. A mention burst is stronger when combined with join velocity and concentration across a small time range; a public event announcement can explain a burst but does not erase observations. Incomplete message intent/content context must remain a stated limitation.

@@ -42,6 +42,7 @@ Risks include Audit ambiguity, legitimate bulk work, compromised bot, insider re
 ## Dependencies and integration
 
 Suspicious Admin Activity connects with:
+
 - [Early Raid Detection](../early-raid-detection/README.md)
 - [Incident Timeline](../incident-timeline/README.md)
 - [Evidence Vault](../evidence-vault/README.md)

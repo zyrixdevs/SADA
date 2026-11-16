@@ -42,6 +42,7 @@ Risks include Slow raids, legitimate surges, cold start, alert manipulation, pri
 ## Dependencies and integration
 
 Early Raid Detection connects with:
+
 - [Threat DNA](../threat-dna/README.md)
 - [Incident Timeline](../incident-timeline/README.md)
 - [Evidence Vault](../evidence-vault/README.md)

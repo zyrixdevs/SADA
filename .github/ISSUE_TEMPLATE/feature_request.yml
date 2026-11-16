@@ -1,0 +1,29 @@
+name: Feature proposal
+description: Propose a future SADA capability or a change to an existing specification.
+title: "[Proposal]: "
+labels: ["proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: "SADA has no implemented application features yet. Proposals are design discussion, not a commitment to build. Do not include credentials or real Discord member data."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and affected users
+      description: Describe the security problem without sensitive incident details.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior and boundaries
+      description: Include permissions, opt-in, human review, privacy, failure behavior, and misuse cases.
+    validations:
+      required: true
+  - type: textarea
+    id: overlap
+    attributes:
+      label: Related modules or contracts
+      description: Identify existing documentation that may overlap.
+    validations:
+      required: true

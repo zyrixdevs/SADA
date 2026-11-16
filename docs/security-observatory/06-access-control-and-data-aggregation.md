@@ -21,6 +21,7 @@ Related modules: [Incident Timeline](../incident-timeline/README.md), [Attack Ca
 ## Open decisions and implementation state
 
 Cohort floor; staff/public fields; windows; export rights. Proposed phase: 7 after privacy review. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Aggregate query protection
 
 Define an approved metric registry with dimensions, time buckets, data lineage, minimum cohort policy, and export scope. Suppress small groups before serialization and apply complementary suppression so totals cannot reveal a hidden cell. Rate-limit overlapping filters and audit exports. Do not permit arbitrary user ID filters. A metric snapshot records method version, freshness, suppression state, and source aggregate IDs without exposing individual incidents.

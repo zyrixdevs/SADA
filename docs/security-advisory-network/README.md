@@ -42,6 +42,7 @@ Risks include Flooding, deanonymization, stale notices, enumeration. Enforce lea
 ## Dependencies and integration
 
 Security Advisory Network connects with:
+
 - [Scam and Phishing Intelligence](../scam-and-phishing-intelligence/README.md)
 - [Threat Intelligence Network](../threat-intelligence-network/README.md)
 - [Attack Campaign Tracker](../attack-campaign-tracker/README.md)

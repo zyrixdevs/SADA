@@ -42,6 +42,7 @@ Risks include SSRF, DNS rebinding, private redirect, malware, homographs, stale 
 ## Dependencies and integration
 
 Scam and Phishing Intelligence connects with:
+
 - [Threat Intelligence Network](../threat-intelligence-network/README.md)
 - [Threat DNA](../threat-dna/README.md)
 - [Evidence Vault](../evidence-vault/README.md)

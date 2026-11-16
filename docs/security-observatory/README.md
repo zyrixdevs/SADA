@@ -42,6 +42,7 @@ Risks include Small-cell disclosure, differencing, misleading trend, export misu
 ## Dependencies and integration
 
 Security Observatory connects with:
+
 - [Incident Timeline](../incident-timeline/README.md)
 - [Attack Campaign Tracker](../attack-campaign-tracker/README.md)
 - [Security Advisory Network](../security-advisory-network/README.md)

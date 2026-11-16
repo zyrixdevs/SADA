@@ -21,6 +21,7 @@ Related modules: [Evidence Vault](../evidence-vault/README.md), [Attack Campaign
 ## Open decisions and implementation state
 
 Retention; cross-case view; time precision. Proposed phase: 1 shared foundation. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Ordering key
 
 Preserve occurred_at, observed_at, received_at, and source sequence independently. Render primarily by occurred_at, then source event sequence when trusted, then received_at and immutable event ID for deterministic ties. Flag implausible clock skew and late arrivals; never rewrite source timestamps. Corrections appear adjacent to the superseded event with a link and current-state marker. Correlation IDs group workflows but do not imply causal order.

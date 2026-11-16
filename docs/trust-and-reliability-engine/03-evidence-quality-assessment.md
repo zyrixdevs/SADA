@@ -21,6 +21,7 @@ Related modules: [Evidence Vault](../evidence-vault/README.md), [Global Ban Syst
 ## Open decisions and implementation state
 
 Sample floor; weights; reviewer; transparency; cadence. Proposed phase: 3 after governance/evaluation corpus. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Factor profile
 
 Compute separate factors for authenticated source, target-matched audit record, actor attribution, field completeness, temporal consistency, evidence integrity, correction history, and independent review. Each factor includes numerator, denominator, observation window, methodology version, and sample sufficiency. Do not combine into a probability until calibration and fairness review are complete. Case consumers receive factor-level explanations and may exclude an unreliable factor without erasing the observation.

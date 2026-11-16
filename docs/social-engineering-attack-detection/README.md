@@ -50,6 +50,7 @@ Cross-guild sharing requires explicit purpose and permission. Missing, stale or 
 **Method:** `POST`. Proposed internal endpoint: `POST /v1/social-engineering/reports`. It uses the shared `/v1` authentication and authorization model, guild scope from authenticated grants, request ID, schema version, idempotency key, bounded JSON payload, and shared error shape. The endpoint accepts observations or recommendations only; it does not execute Discord actions. A durable inbox receipt is returned only after commit. Duplicate key + same canonical body returns the original receipt; changed body returns `409`. Retry only transient `retryable=true` errors.
 
 Example request:
+
 ```json
 {
   "schema_version": "1.0",
@@ -63,6 +64,7 @@ Example request:
 ```
 
 Example accepted response:
+
 ```json
 {"event_id":"018f0000-0000-7000-8000-000000000001","receipt_id":"018f0000-0000-7000-8000-000000000004","status":"accepted","duplicate":false}
 ```

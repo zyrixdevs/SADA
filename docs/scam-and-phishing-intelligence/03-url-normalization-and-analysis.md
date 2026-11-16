@@ -21,6 +21,7 @@ Related modules: [Threat Intelligence Network](../threat-intelligence-network/RE
 ## Open decisions and implementation state
 
 Sandbox; source use; review quorum; expiry; exception authority. Proposed phase: 3 after isolated analyzer design. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Normalization sequence
 
 Parse with a standards-compliant URL parser; reject malformed schemes and credentials; convert host to canonical IDNA form; lowercase host; remove only scheme-defined default ports; retain original submitted form in restricted provenance; derive registrable domain using a versioned public-suffix data set. Do not strip path/query values if they may distinguish a campaign token; store them only when necessary and redact secrets. Canonicalization is not a maliciousness verdict.

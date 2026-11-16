@@ -1,0 +1,33 @@
+name: Documentation proposal or correction
+description: Suggest a clarification, correction, or new documentation section.
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: "Documentation describes proposed architecture unless a section explicitly says otherwise. Do not include real Discord member data or credentials."
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      options:
+        - Correction to an existing specification
+        - Clarification or example
+        - New documentation proposal
+        - Broken link or navigation
+    validations:
+      required: true
+  - type: input
+    id: path
+    attributes:
+      label: Document path
+      placeholder: docs/example/README.md
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Suggested change
+      description: Explain the gap and proposed wording or technical detail.
+    validations:
+      required: true

@@ -21,6 +21,7 @@ Related modules: [Threat Intelligence Network](../threat-intelligence-network/RE
 ## Open decisions and implementation state
 
 Merge gate; independent sources; lifecycle owner; public language. Proposed phase: 4 after graph/evidence/timeline. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Candidate grouping
 
 A candidate campaign requires at least one explicit relationship edge with provenance; grouping may use time overlap, normalized indicator, fingerprint dimensions, or reviewed human link. Each criterion is independently visible. Avoid circular corroboration where two derived fingerprints both originate from one incident. Recompute membership after correction, edge expiry, or source suspension. Merge and split are new campaign revisions with a before/after membership diff.

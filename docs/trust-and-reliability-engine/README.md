@@ -42,6 +42,7 @@ Risks include Feedback loops, bias, false reports, small samples, retaliation. E
 ## Dependencies and integration
 
 Trust and Reliability Engine connects with:
+
 - [Evidence Vault](../evidence-vault/README.md)
 - [Global Ban System](../global-ban-system/README.md)
 - [Threat Intelligence Network](../threat-intelligence-network/README.md)
