@@ -21,6 +21,7 @@ Related modules: [Threat Intelligence Network](../threat-intelligence-network/RE
 ## Open decisions and implementation state
 
 Sandbox; source use; review quorum; expiry; exception authority. Proposed phase: 3 after isolated analyzer design. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Redirect worker boundary
 
 Run analysis in a disposable worker with strict egress allowlist, DNS resolution checks on every hop, private/reserved IPv4 and IPv6 blocking, redirect and byte limits, no ambient credentials, no browser profile, and no downloaded file execution. Re-resolve after each redirect to reduce DNS-rebinding risk. Record each hop, resolved address class, response status, timestamp, and analyzer version; mark timeouts/inaccessible results unknown. The bot itself never fetches a submitted URL.

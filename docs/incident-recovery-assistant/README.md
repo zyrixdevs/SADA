@@ -42,6 +42,7 @@ Risks include Stale backup, injected snapshot, escalation, name collisions, part
 ## Dependencies and integration
 
 Incident Recovery Assistant connects with:
+
 - [Security Health Monitor](../security-health-monitor/README.md)
 - [Evidence Vault](../evidence-vault/README.md)
 - [Attack Impact Simulator](../attack-impact-simulator/README.md)

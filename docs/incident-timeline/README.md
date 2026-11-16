@@ -42,6 +42,7 @@ Risks include Clock skew, forged time, floods, unauthorized discovery. Enforce l
 ## Dependencies and integration
 
 Incident Timeline connects with:
+
 - [Evidence Vault](../evidence-vault/README.md)
 - [Attack Campaign Tracker](../attack-campaign-tracker/README.md)
 - [Threat Intelligence Network](../threat-intelligence-network/README.md)

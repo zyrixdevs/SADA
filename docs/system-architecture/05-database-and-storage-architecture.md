@@ -17,7 +17,6 @@ erDiagram
 
 Modules own only projections such as baselines, indicators, snapshots, campaigns and simulations.
 
-
 ## Canonical column and constraint proposal
 
 These are shared logical tables; exact SQL types/enums and retention need migration review. All timestamps are UTC. Use append-only revisions for corrections.

@@ -5,12 +5,15 @@
 ## Three separate decisions
 
 ### 1. Local ban
+
 A guild's authorized moderator independently bans a member under that guild's rules. The ban affects one guild. SADA may receive a structured event only if the guild opted into incident sharing and the event meets the configured provenance requirements. A local ban alone is not a global finding.
 
 ### 2. SADA suspicious flag
+
 SADA Core correlates evidence and suggests that reviewers or eligible guild staff examine a case. This flag is not a punishment, does not modify a Discord ban list, and must not be described as a global ban.
 
 ### 3. Global ban decision
+
 Authorized Zyrix global reviewers approve a cross-server enforcement decision under a documented policy and evidence snapshot. Each participating guild's bot independently decides whether it is eligible and able to apply a local ban. Discord has no API call that bans a user from every unrelated server.
 
 ## Global review and approval

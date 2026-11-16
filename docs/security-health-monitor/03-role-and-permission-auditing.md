@@ -21,6 +21,7 @@ Related modules: [Incident Recovery Assistant](../incident-recovery-assistant/RE
 ## Open decisions and implementation state
 
 Cadence; retention; risk rubric; identity fields. Proposed phase: 5 after scope and retention review. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Permission evaluation
 
 Snapshot role permission bitfields, role order, member role assignments only when needed, and channel overwrites with object IDs and capture time. Rules inspect high-impact capabilities such as Administrator, ManageGuild, ManageRoles, ManageWebhooks, BanMembers, and channel-specific access. Explain inheritance and overwrite precedence; distinguish a bot's effective permissions from role defaults. Findings reference the exact snapshot revision and suggest a least-privilege review, never mutate configuration.

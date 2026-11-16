@@ -21,6 +21,7 @@ Related modules: [Security Health Monitor](../security-health-monitor/README.md)
 ## Open decisions and implementation state
 
 Snapshot cadence; restorable objects; owner verification; retention. Proposed phase: 6 after integrity/simulator. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Permission restoration plan
 
 Represent each overwrite/role change as a proposed operation with current state, desired snapshot state, required actor/bot capability, dependency order, conflict, and reversibility class. The plan must identify deleted or recreated objects whose Discord IDs differ. Apply the minimum necessary permission change and require the guild owner or explicitly delegated administrator to approve the exact plan revision. Partial execution pauses for state reconciliation.

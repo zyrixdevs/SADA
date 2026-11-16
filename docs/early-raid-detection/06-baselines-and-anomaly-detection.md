@@ -21,6 +21,7 @@ Related modules: [Threat Dna](../threat-dna/README.md), [Incident Timeline](../i
 ## Open decisions and implementation state
 
 Baseline windows; sample sizes; alert thresholds; account-age use; retention. Proposed phase: 4 after local events and consent. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Baseline method
 
 Maintain versioned per-guild distributions by signal and time bucket. A robust median and median absolute deviation are candidate estimators because a few prior raids should not permanently raise the normal baseline; sparse or seasonal data yields insufficient baseline. Store window coverage, sample count, estimator version, exclusions, and last recompute time. Thresholds, lookback, and cold-start policy remain open; evaluate false alerts against scheduled events and seasonal changes before rollout.

@@ -21,6 +21,7 @@ Related modules: [Emergency Response Playbooks](../emergency-response-playbooks/
 ## Open decisions and implementation state
 
 Freshness; estimate presentation; simulation retention. Proposed phase: 5 before action workflows. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Estimation method
 
 Freeze the target set and snapshot revision. Compute eligible, excluded, already-affected, hierarchy-blocked, permission-unknown, and stale-state counts separately. Report the set difference that drives each estimate and a snapshot age label. For cross-guild decisions, show each guild outcome separately rather than summing as universal enforcement. Recalculate when membership or permissions change; estimates are not guarantees and do not enqueue actions.

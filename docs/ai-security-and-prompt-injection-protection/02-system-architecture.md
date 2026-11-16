@@ -1,0 +1,38 @@
+# 02 — System architecture: AI Security and Prompt Injection Protection
+
+**Proposed design; Rust SADA Core, PostgreSQL authoritative store, Python Zyrix adapter for Discord capture/actions.**
+
+## Responsibilities and boundaries
+
+1. **Zyrix adapter:** observes only events permitted by guild capability; assigns event and idempotency IDs; durably retries; independently performs any local Discord action.
+2. **Shared SADA intake:** authenticates the installation, derives guild scope from grants, validates schema/size/consent, and commits the durable inbox before acknowledging.
+3. **AI Security and Prompt Injection Protection domain module:** validates domain fields, creates module-owned projections, computes versioned factors, and emits a shared incident/finding reference or advisory request.
+4. **Canonical services:** own identity/consent, incidents, evidence references, case/review, delivery/outbox and append-only audit.
+5. **Consumers:** authorized reviewers and adapter receive only scoped summaries; downstream actions require fresh local checks.
+
+Treat evidence as data; isolate parser; pass bounded quoted content without authority; disable tools by default; validate structured output; record prompt/model/policy refs; present recommendation with source links; permit manual workflow if AI unavailable.
+
+```mermaid
+sequenceDiagram
+ participant Z as Zyrix adapter
+ participant I as Shared intake/inbox
+ participant M as AI Security and Prompt Injection Protection module
+ participant P as PostgreSQL
+ participant C as Case/review services
+ Z->>I: Versioned scoped event + idempotency key
+ I->>P: Commit inbox receipt
+ I-->>Z: Durable receipt
+ M->>P: Lease event, validate and write projection
+ M->>P: Commit finding + audit + outbox transaction
+ M->>C: Link canonical incident/case reference
+ C-->>Z: Scoped, expiring delivery
+ Z->>Z: Recheck consent and local authority
+```
+
+## Trust boundaries and failure handling
+
+Treat event payloads, feed data and attachments as untrusted. No network call occurs inside the state transaction. Unknown schema major version is rejected; duplicate delivery is idempotent; transient dependency errors retry with bounded jitter; poison events dead-letter with a safe reason code. If canonical identity, consent, provenance or evidence state is unavailable, do not create an actionable finding. A stale dependency is shown as stale/unknown, not “safe.”
+
+## Shared contracts
+
+Use UUID IDs, UTC `TIMESTAMPTZ`, canonical decimal Discord snowflakes, versioned payloads, shared confidence/severity vocabulary, append-only corrections, and request/correlation IDs. This module owns only projections described in [data model](data-model.md).

@@ -21,6 +21,7 @@ Related modules: [Threat Intelligence Network](../threat-intelligence-network/RE
 ## Open decisions and implementation state
 
 Allowed signals; weights; retention; visibility. Proposed phase: 7 after legal/privacy and false-positive review. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Correlation safeguards
 
 Signals are grouped by provenance and independence before evaluation. A single display name, avatar, join pattern, or shared public link cannot establish identity. A candidate must list each signal, source permission, temporal relation, alternative explanation, and missing data. Keep a source-level observation distinct from a derived relationship. Similarity thresholds remain unapproved and require bias/false-positive review before any reviewer-facing high-confidence label.

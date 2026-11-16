@@ -1,0 +1,33 @@
+name: Documentation or tooling bug
+description: Report a reproducible issue in repository documentation or developer tooling.
+title: "[Bug]: "
+labels: ["triage"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not use this form for security vulnerabilities or real guild/member data. See SECURITY.md for private reporting."
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Documentation
+        - CI or repository tooling
+        - GitHub configuration guidance
+        - Other repository issue
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should the repository or documentation say/do?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include paths, steps, or sanitized logs. Do not include secrets or member data.
+    validations:
+      required: true

@@ -21,6 +21,7 @@ Related modules: [Threat Dna](../threat-dna/README.md), [Incident Timeline](../i
 ## Open decisions and implementation state
 
 Baseline windows; sample sizes; alert thresholds; account-age use; retention. Proposed phase: 4 after local events and consent. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Explainable risk vector
 
 Return a vector of join velocity, message burst, mention concentration, coordination evidence, baseline sufficiency, and data freshness. A policy may map this vector to alert priority, but must expose each contributing factor and excluded signal. Do not combine missing values with zero and do not publish a single calibrated probability before validation. Alert thresholds are policy-versioned and route to staff review only.

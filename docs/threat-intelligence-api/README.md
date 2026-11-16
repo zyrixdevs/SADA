@@ -42,6 +42,7 @@ Risks include Key theft, enumeration, tenant escape, replay, overbroad scope. En
 ## Dependencies and integration
 
 Threat Intelligence API connects with:
+
 - [Global Ban System](../global-ban-system/README.md)
 - [Threat Intelligence Network](../threat-intelligence-network/README.md)
 - [Threat DNA](../threat-dna/README.md)

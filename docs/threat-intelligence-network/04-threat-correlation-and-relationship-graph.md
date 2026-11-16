@@ -21,6 +21,7 @@ Related modules: [Threat Dna](../threat-dna/README.md), [Incident Timeline](../i
 ## Open decisions and implementation state
 
 Cross-guild pseudonymous links; independence policy; source identity visibility. Proposed phase: 2 after consent and event contracts. No numeric threshold, accuracy, operational target or deployed behavior is claimed.
+
 ## Relationship graph rules
 
 Represent nodes as typed references (incident, indicator, fingerprint, campaign, case) and edges as typed claims (same indicator, temporal proximity, reviewed association). Each edge stores source evidence IDs, algorithm version, scope, creation time, review state, and expiry. Do not create user-to-user identity edges from shared weak signals. Correlation traversals are bounded by depth, time window, tenant authorization, and result count. Independent-source count is computed from distinct authorized guilds after installation deduplication; a campaign copied between servers remains one origin. A correction deactivates derived edges and schedules recomputation.

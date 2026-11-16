@@ -42,6 +42,7 @@ Risks include Stale input, underestimated cascade, credential exposure. Enforce 
 ## Dependencies and integration
 
 Attack Impact Simulator connects with:
+
 - [Emergency Response Playbooks](../emergency-response-playbooks/README.md)
 - [Security Health Monitor](../security-health-monitor/README.md)
 - [Incident Recovery Assistant](../incident-recovery-assistant/README.md)

@@ -6,7 +6,6 @@
 
 SADA (Suspicious Activity Detection Algorithm) is intended to analyze cross-server security evidence for participating Zyrix Bot communities. The Global Ban System is its first major feature. SADA creates an explainable suspicious-activity signal and case for human review. It does not determine guilt and never bans from a score alone.
 
-
 ## What it is and why SADA needs it
 
 The Global Ban System is a reviewed cross-server decision workflow for eligible, evidence-backed cases. It addresses repeated threats that affect opted-in communities while keeping each guild's authority local.
