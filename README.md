@@ -20,28 +20,68 @@ Rust is proposed for SADA Core; PostgreSQL for authoritative structured records;
 
 ## Feature modules
 
-| Module | Status |
-|---|---|
-| [Global Ban System](docs/global-ban-system/README.md) | Proposed feature specification |
-| [Threat Intelligence Network](docs/threat-intelligence-network/README.md) | Proposed feature specification |
-| [Threat DNA](docs/threat-dna/README.md) | Proposed feature specification |
-| [Early Raid Detection](docs/early-raid-detection/README.md) | Proposed feature specification |
-| [Scam and Phishing Intelligence](docs/scam-and-phishing-intelligence/README.md) | Proposed feature specification |
-| [Security Health Monitor](docs/security-health-monitor/README.md) | Proposed feature specification |
-| [Suspicious Admin Activity](docs/suspicious-admin-activity/README.md) | Proposed feature specification |
-| [Emergency Response Playbooks](docs/emergency-response-playbooks/README.md) | Proposed feature specification |
-| [Attack Impact Simulator](docs/attack-impact-simulator/README.md) | Proposed feature specification |
-| [Ban Evasion Intelligence](docs/ban-evasion-intelligence/README.md) | Proposed feature specification |
-| [Incident Timeline](docs/incident-timeline/README.md) | Proposed feature specification |
-| [Evidence Vault](docs/evidence-vault/README.md) | Proposed feature specification |
-| [Trust and Reliability Engine](docs/trust-and-reliability-engine/README.md) | Proposed feature specification |
-| [Security Advisory Network](docs/security-advisory-network/README.md) | Proposed feature specification |
-| [Attack Campaign Tracker](docs/attack-campaign-tracker/README.md) | Proposed feature specification |
-| [Security Simulation Mode](docs/security-simulation-mode/README.md) | Proposed feature specification |
-| [Incident Recovery Assistant](docs/incident-recovery-assistant/README.md) | Proposed feature specification |
-| [Threat Intelligence API](docs/threat-intelligence-api/README.md) | Proposed feature specification |
-| [Security Observatory](docs/security-observatory/README.md) | Proposed feature specification |
+The catalogue contains 49 proposed feature specifications. None is operational. Browse by category in the [documentation index](docs/README.md).
 
+### Existing feature modules (1–19)
+- [Global Ban System](docs/global-ban-system/README.md)
+- [Threat Intelligence Network](docs/threat-intelligence-network/README.md)
+- [Threat DNA](docs/threat-dna/README.md)
+- [Early Raid Detection](docs/early-raid-detection/README.md)
+- [Scam and Phishing Intelligence](docs/scam-and-phishing-intelligence/README.md)
+- [Security Health Monitor](docs/security-health-monitor/README.md)
+- [Suspicious Admin Activity](docs/suspicious-admin-activity/README.md)
+- [Emergency Response Playbooks](docs/emergency-response-playbooks/README.md)
+- [Attack Impact Simulator](docs/attack-impact-simulator/README.md)
+- [Ban Evasion Intelligence](docs/ban-evasion-intelligence/README.md)
+- [Incident Timeline](docs/incident-timeline/README.md)
+- [Evidence Vault](docs/evidence-vault/README.md)
+- [Trust and Reliability Engine](docs/trust-and-reliability-engine/README.md)
+- [Security Advisory Network](docs/security-advisory-network/README.md)
+- [Attack Campaign Tracker](docs/attack-campaign-tracker/README.md)
+- [Security Simulation Mode](docs/security-simulation-mode/README.md)
+- [Incident Recovery Assistant](docs/incident-recovery-assistant/README.md)
+- [Threat Intelligence API](docs/threat-intelligence-api/README.md)
+- [Security Observatory](docs/security-observatory/README.md)
+
+### Bot, integration and identity security (20–26)
+- [Bot Security Intelligence](docs/bot-security-intelligence/README.md)
+- [OAuth and Third-Party App Security](docs/oauth-and-third-party-app-security/README.md)
+- [Bot Permission Drift Detection](docs/bot-permission-drift-detection/README.md)
+- [Bot Compromise Early Warning](docs/bot-compromise-early-warning/README.md)
+- [Integration Supply Chain Intelligence](docs/integration-supply-chain-intelligence/README.md)
+- [Administrative Identity Protection](docs/administrative-identity-protection/README.md)
+- [Privilege Escalation Path Analyzer](docs/privilege-escalation-path-analyzer/README.md)
+
+### Attack prevention and detection (27–35)
+- [Destructive Action Circuit Breaker](docs/destructive-action-circuit-breaker/README.md)
+- [Invite Link Security Monitor](docs/invite-link-security-monitor/README.md)
+- [Staff and Support Impersonation Detection](docs/staff-and-support-impersonation-detection/README.md)
+- [Social Engineering Attack Detection](docs/social-engineering-attack-detection/README.md)
+- [Advanced Spam Evasion Detection](docs/advanced-spam-evasion-detection/README.md)
+- [Mass Mention and Role Abuse Protection](docs/mass-mention-and-role-abuse-protection/README.md)
+- [Raid Source and Entry Analysis](docs/raid-source-and-entry-analysis/README.md)
+- [Moderation Audit Integrity Monitor](docs/moderation-audit-integrity-monitor/README.md)
+- [Configuration Drift Detection](docs/configuration-drift-detection/README.md)
+
+### Malware, phishing and malicious content (36–40)
+- [Malicious Attachment Intelligence](docs/malicious-attachment-intelligence/README.md)
+- [QR Code Threat Detection](docs/qr-code-threat-detection/README.md)
+- [Short Link and Redirect Security](docs/short-link-and-redirect-security/README.md)
+- [Malicious File Campaign Correlation](docs/malicious-file-campaign-correlation/README.md)
+- [External Threat Feed Intelligence](docs/external-threat-feed-intelligence/README.md)
+
+### SADA platform and infrastructure security (41–47)
+- [SADA API Abuse Protection](docs/sada-api-abuse-protection/README.md)
+- [Tenant Isolation Security](docs/tenant-isolation-security/README.md)
+- [SADA Operator Activity Monitoring](docs/sada-operator-activity-monitoring/README.md)
+- [Secret and Credential Exposure Monitor](docs/secret-and-credential-exposure-monitor/README.md)
+- [Dependency Vulnerability Intelligence](docs/dependency-vulnerability-intelligence/README.md)
+- [Secure Build and Release Verification](docs/secure-build-and-release-verification/README.md)
+- [Security Patch and Exposure Advisory](docs/security-patch-and-exposure-advisory/README.md)
+
+### Advanced security intelligence (48–49)
+- [Threat Intelligence Expiration and Revocation](docs/threat-intelligence-expiration-and-revocation/README.md)
+- [AI Security and Prompt Injection Protection](docs/ai-security-and-prompt-injection-protection/README.md)
 ## Security principles
 
 Separate opt-in for submission, intelligence reception, alerts and enforcement; all off by default. Minimize data; preserve provenance and uncertainty; require human review for high-impact decisions; support appeals/reversals; no public accused-user list. Zyrix rechecks local consent, membership, permissions and role hierarchy. SADA has no Discord token and no moderation API access. Outage never disables local moderation or AntiNuke.
