@@ -1,5 +1,7 @@
 # 05 — Global ban and local enforcement
 
+**Status: proposed technical specification; not implemented.**
+
 ## Three separate decisions
 
 ### 1. Local ban

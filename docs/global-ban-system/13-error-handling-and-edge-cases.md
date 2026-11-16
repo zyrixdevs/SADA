@@ -1,5 +1,7 @@
 # Error Handling and Edge Cases
 
+**Status: proposed technical specification; not implemented.**
+
 Fail closed for SADA decisions and fail independently for ordinary local moderation: uncertainty must never create an unapproved Discord action.
 
 | Situation | Required behavior |

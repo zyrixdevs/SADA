@@ -1,10 +1,14 @@
+> **Repository scope:** Proposed design only. SADA contains no Zyrix Bot source. Any bot/ paths below describe an earlier Zyrix&Dash assessment and must be revalidated against the target revision before implementation.
+
 # Discord Integration and Permissions
+
+**Status: proposed technical specification; not implemented.**
 
 This chapter defines how the future SADA service integrates with Discord through Zyrix Bot. SADA itself has no Discord token and cannot invoke Discord moderation endpoints.
 
-## Existing integration points
+## Candidate integration points from a prior Zyrix source assessment
 
-The current workspace is a Python bot under `bot/`, not the standalone repository layout referenced in earlier planning. Relevant verified source includes:
+A prior Zyrix&Dash source assessment inspected `bot/`; that source is not part of SADA and the findings may be stale. Candidate integration points to revalidate include:
 
 - `bot/cogs/moderation/ban.py`, `kick.py`, and `timeout.py`: local moderation command handlers.
 - `bot/cogs/moderation/warn.py`: stores only a per-guild/user warning count in `db/warn.db`; the moderation reason and actor are not kept as a detailed incident ledger.

@@ -1,0 +1,23 @@
+# 05 — Webhook and channel security
+
+**Status: proposed specification; not implemented.**
+
+## Scope
+
+This chapter defines the webhook and channel security responsibility of Security Health Monitor. Assess opt-in guild configuration and provide prioritized, reversible recommendations.
+
+## Proposed technical contract
+
+Threat-specific risks: Overbroad permissions, stale snapshot, leakage, mistaken risk classifications. Accept only Authorized roles, permissions, bot/integration scopes, webhook metadata without tokens, channel overwrites.; reject unapproved fields. Encrypt restricted evidence, scope and audit reads, redact cross-guild summaries, rate-limit, and support revocation/suspension plus appeal. A suspicious pattern may route to review only. Read-only; never mutate roles/channels/integrations/webhooks/settings or export tokens.
+
+## Failure and safety behavior
+
+Read-only; never mutate roles/channels/integrations/webhooks/settings or export tokens. Overbroad permissions, stale snapshot, leakage, mistaken risk classifications. Retry transient failures only with idempotency; reject permanent authorization/schema errors. Reconcile ambiguous external outcomes by request ID before retry. SADA outage cannot authorize a Discord action.
+
+## Related contracts
+
+Related modules: [Incident Recovery Assistant](../incident-recovery-assistant/README.md), [Incident Timeline](../incident-timeline/README.md), [Evidence Vault](../evidence-vault/README.md), [Emergency Response Playbooks](../emergency-response-playbooks/README.md), [Attack Impact Simulator](../attack-impact-simulator/README.md), [Security Observatory](../security-observatory/README.md). Canonical [event](../shared-standards/01-event-schema-standard.md), [evidence](../shared-standards/02-evidence-standard.md), [confidence](../shared-standards/04-confidence-standard.md), [audit](../shared-standards/08-audit-record-standard.md), [platform architecture](../system-architecture/README.md), and [decision register](../implementation-roadmap/06-open-questions-and-decisions.md).
+
+## Open decisions and implementation state
+
+Cadence; retention; risk rubric; identity fields. Proposed phase: 5 after scope and retention review. No numeric threshold, accuracy, operational target or deployed behavior is claimed.

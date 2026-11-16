@@ -1,8 +1,10 @@
 # 06 — Database and data model
 
+**Status: proposed technical specification; not implemented.**
+
 ## Storage recommendation
 
-The current bot uses multiple feature-owned SQLite databases and JSON files, with no general migration framework. Do not modify those stores to become SADA's case ledger. The independent SADA service should use PostgreSQL as the authoritative structured store: multiple bot installations and review workers need concurrent writes, transactions, uniqueness constraints, relational audit links, and safe job processing. Do not share a SQLite file over a network filesystem. PostgreSQL is a proposed future dependency; no database or migration is created in this task.
+A prior Zyrix&Dash source assessment found multiple feature-owned SQLite databases and JSON files, with no general migration framework; revalidate this before implementation. Do not modify those stores to become SADA's case ledger. The independent SADA service should use PostgreSQL as the authoritative structured store: multiple bot installations and review workers need concurrent writes, transactions, uniqueness constraints, relational audit links, and safe job processing. Do not share a SQLite file over a network filesystem. PostgreSQL is a proposed future dependency; no database or migration is created in this task.
 
 Store timestamps in UTC, Discord snowflakes consistently as BIGINT or canonical decimal strings, and opaque UUIDs for incident/case/decision IDs. Enforce foreign keys and CHECK constraints. Use transaction boundaries for event intake, case evidence, state transitions, audit events, and outbox jobs. Encrypt sensitive reason fields at rest and restrict access. Never store bot tokens in this database.
 
@@ -44,7 +46,7 @@ Types below use PostgreSQL notation. Every field is proposed, and production DDL
 - Rules: unreviewed classifier labels are hypotheses. Reviewer changes append revisions; do not convert sentiment/opinion terms into fact silently.
 - Retention: same as incident, with restricted reviewer notes.
 
-### evidence_references
+### evidence_refs
 - Purpose: auditable references to supporting material without copying private content by default.
 - Fields: evidence_id UUID primary key; incident_id UUID FK; evidence_type TEXT; source_ref TEXT nullable (audit ID/message ID/case reference); evidence_hash TEXT nullable; captured_at; access_scope; quality_code; redacted_summary TEXT nullable; retention_until.
 - Indexes: incident_id, evidence_type.
@@ -66,7 +68,7 @@ Types below use PostgreSQL notation. Every field is proposed, and production DDL
 - Rules: score is a recommendation only. Preserve each evidence snapshot and explanation. Reopen as linked version or audited transition.
 - Retention: **OPEN DECISION**; minimize personal data while preserving decisions and appeal history.
 
-### case_incidents
+### case_links
 - Purpose: evidence snapshot membership for a case.
 - Fields: case_id UUID FK; incident_id UUID FK; inclusion_status ENUM(included, excluded, disputed); inclusion_reason TEXT; included_at; PRIMARY KEY(case_id, incident_id).
 - Indexes: incident_id, inclusion_status.
@@ -109,10 +111,10 @@ Types below use PostgreSQL notation. Every field is proposed, and production DDL
 - Rules: store success/failed/skipped/unavailable independently. Reconcile unknown before retry. Never imply all-guild success from a partial result.
 - Retention: durable.
 
-### appeals, audit_events, and delivery_jobs
+### appeals, audit_events, and delivery_outbox
 - appeals: appeal_id UUID PK; case_id FK; appellant_user_id; statement encrypted/restricted; status; submitted_at; assigned_reviewer_id; resolution; resolved_at; reason. Index case/status and appellant/time. Retention is an **OPEN DECISION**.
 - audit_events: event_id UUID PK; object_type/id; actor_user_id/type; action; timestamp; reason; before/after state; policy/evidence version; request_id; outcome. Append-only; indexes object/time and actor/time. Never log credentials or private chat content.
-- delivery_jobs: job_id UUID PK; installation_id; job_type; idempotency_key unique; payload_ref; status; attempts; next_attempt_at; last_error_code; created_at/completed_at. Index status/next_attempt_at. Keep payload encrypted/minimized and purge per retention.
+- delivery_outbox: job_id UUID PK; installation_id; job_type; idempotency_key unique; payload_ref; status; attempts; next_attempt_at; last_error_code; created_at/completed_at. Index status/next_attempt_at. Keep payload encrypted/minimized and purge per retention.
 
 ## Relationships
 

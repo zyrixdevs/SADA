@@ -1,3 +1,5 @@
+> **Scope:** Original engine boundary note retained. Proposed only; this repository contains docs, not Zyrix source or a running SADA service. See [expanded architecture](../docs/system-architecture/README.md) and [shared standards](../docs/shared-standards/README.md).
+
 # Independent SADA Engine Architecture
 
 ## Purpose and boundary
@@ -65,7 +67,7 @@ For signals, Zyrix can poll or retrieve pending items by installation scope init
 
 AntiNuke is local, immediate protection. SADA is cross-server intelligence and investigation. SADA must never sit in the critical path for a local AntiNuke response.
 
-Verified current integration point: `bot/cogs/antinuke/` contains active event-driven cogs registered by `bot/cogs/__init__.py`, including ban, kick, prune, channel, role, webhook, and bot-add handlers. These cogs are guild-local and use local AntiNuke configuration in `db/anti.db` through existing command/config patterns. Some current handlers can perform direct local punishment; this blueprint does not change their behavior. In particular, the current `antiprune.py` attribution is broad and must not be treated as trustworthy SADA evidence without a separately approved correction and tests.
+Previously observed candidate integration point: `bot/cogs/antinuke/` contains active event-driven cogs registered by `bot/cogs/__init__.py`, including ban, kick, prune, channel, role, webhook, and bot-add handlers. These cogs are guild-local and use local AntiNuke configuration in `db/anti.db` through existing command/config patterns. Some current handlers can perform direct local punishment; this blueprint does not change their behavior. In particular, the current `antiprune.py` attribution is broad and must not be treated as trustworthy SADA evidence without a separately approved correction and tests.
 
 Proposed event flow:
 
@@ -108,4 +110,4 @@ When SADA is unavailable, Zyrix logs a safe diagnostic, queues only if the appro
 
 ## Build sequence
 
-Follow the staged plan in [Implementation Roadmap](../global-ban-system/15-implementation-roadmap.md): policy/contracts and storage first, then event adapter, evidence classification, correlation, local alerts, global review/enforcement signals, and appeals/operations. Each stage has an explicit test and completion gate; do not enable production collection by default.
+Follow the staged plan in [Implementation Roadmap](../docs/global-ban-system/15-implementation-roadmap.md): policy/contracts and storage first, then event adapter, evidence classification, correlation, local alerts, global review/enforcement signals, and appeals/operations. Each stage has an explicit test and completion gate; do not enable production collection by default.

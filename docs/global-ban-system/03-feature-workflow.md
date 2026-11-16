@@ -1,5 +1,7 @@
 # 03 — Feature workflow
 
+**Status: proposed technical specification; not implemented.**
+
 ## Participation setup
 
 A guild owner or authorized administrator opens SADA setup from a private context. The setup must explain the data categories and ask separately:

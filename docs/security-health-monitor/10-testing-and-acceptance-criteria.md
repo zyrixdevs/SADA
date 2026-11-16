@@ -1,0 +1,23 @@
+# 10 — Testing and acceptance criteria
+
+**Status: proposed specification; not implemented.**
+
+## Scope
+
+This chapter defines the testing and acceptance criteria responsibility of Security Health Monitor. Assess opt-in guild configuration and provide prioritized, reversible recommendations.
+
+## Proposed technical contract
+
+Use unit, PostgreSQL integration, API contract, tenant authorization, adversarial, privacy, load, and failure/restart tests. Fixtures include duplicate floods, forged/stale timestamps, source collusion, correction races, revoked consent, and dependency outages. Acceptance invariant: Change creates a new snapshot/diff; stale data is labelled stale. Every result has source refs, version, uncertainty and exclusions. No live Discord mutation calls.
+
+## Failure and safety behavior
+
+Read-only; never mutate roles/channels/integrations/webhooks/settings or export tokens. Overbroad permissions, stale snapshot, leakage, mistaken risk classifications. Retry transient failures only with idempotency; reject permanent authorization/schema errors. Reconcile ambiguous external outcomes by request ID before retry. SADA outage cannot authorize a Discord action.
+
+## Related contracts
+
+Related modules: [Incident Recovery Assistant](../incident-recovery-assistant/README.md), [Incident Timeline](../incident-timeline/README.md), [Evidence Vault](../evidence-vault/README.md), [Emergency Response Playbooks](../emergency-response-playbooks/README.md), [Attack Impact Simulator](../attack-impact-simulator/README.md), [Security Observatory](../security-observatory/README.md). Canonical [event](../shared-standards/01-event-schema-standard.md), [evidence](../shared-standards/02-evidence-standard.md), [confidence](../shared-standards/04-confidence-standard.md), [audit](../shared-standards/08-audit-record-standard.md), [platform architecture](../system-architecture/README.md), and [decision register](../implementation-roadmap/06-open-questions-and-decisions.md).
+
+## Open decisions and implementation state
+
+Cadence; retention; risk rubric; identity fields. Proposed phase: 5 after scope and retention review. No numeric threshold, accuracy, operational target or deployed behavior is claimed.

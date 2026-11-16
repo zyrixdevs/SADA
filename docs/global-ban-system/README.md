@@ -1,8 +1,43 @@
+> **Repository scope:** Proposed design only. SADA contains no Zyrix Bot source. Any bot/ paths below describe an earlier Zyrix&Dash assessment and must be revalidated against the target revision before implementation.
+
 # SADA Global Ban System — blueprint
 
-**Status: proposed; documentation only.** No SADA service, schema, configuration, command, API, alert, or global-ban workflow exists in the current workspace's bot source.
+**Status: proposed; documentation only.** No SADA service, schema, configuration, command, API, alert, or global-ban workflow is implemented in this repository.
 
 SADA (Suspicious Activity Detection Algorithm) is intended to analyze cross-server security evidence for participating Zyrix Bot communities. The Global Ban System is its first major feature. SADA creates an explainable suspicious-activity signal and case for human review. It does not determine guilt and never bans from a score alone.
+
+
+## What it is and why SADA needs it
+
+The Global Ban System is a reviewed cross-server decision workflow for eligible, evidence-backed cases. It addresses repeated threats that affect opted-in communities while keeping each guild's authority local.
+
+## What it does
+
+It correlates relevant incidents, opens an explainable case, collects independent reviewer decisions, supports appeal/correction/reversal, and sends scoped approved-decision signals. Zyrix records each guild outcome independently.
+
+## What it must never do
+
+It must never ban from a score, treat a local ban as proof, enroll a server silently, expose an accused-user directory, or let SADA call Discord moderation endpoints. Every local action requires fresh guild consent, membership, actor/bot permission, and hierarchy checks.
+
+## Main workflow
+
+Opt in separately -> submit authorized event -> preserve provenance -> correlate -> human review/quorum -> appeal/correction path -> issue scoped signal -> Zyrix local checks -> record per-guild receipt.
+
+## Data and API boundaries
+
+The module uses canonical incidents, evidence references, cases, reviews, audit events, and delivery receipts. It does not duplicate source evidence. It follows the shared event and API contracts and keeps local alert choices separate from global review.
+
+## Security and privacy
+
+Share only approved structured metadata; restrict original reasons and evidence; redact source identities where policy requires; audit reads and decisions; cancel stale signals after reversal. Retention, notice, quorum, and sharing permissions remain open decisions requiring policy/legal review.
+
+## Dependencies
+
+Threat Intelligence Network, Trust and Reliability Engine, Evidence Vault, Incident Timeline, Appeals, Threat Intelligence API, and the Zyrix Python adapter. The adapter is the only Discord action boundary.
+
+## Implementation phase
+
+Proposed after the independent foundation, event/evidence contracts, case lifecycle, source-quality review, appeals, and reviewer governance. See the feature roadmap; no implementation is claimed.
 
 ## Safety invariants
 
@@ -17,13 +52,13 @@ SADA (Suspicious Activity Detection Algorithm) is intended to analyze cross-serv
 9. The structured database is authoritative; Discord channels and UI are projections. Partial enforcement is reported as partial.
 10. SADA outage must never disable existing Zyrix moderation or AntiNuke.
 
-## What current code does
+## Prior Zyrix source assessment (not code in this repository)
 
-The current workspace is a Python discord.py bot under bot/. Cogs are explicitly registered by bot/cogs/__init__.py. Local warn state in bot/cogs/moderation/warn.py is a count keyed by guild/user; it does not persist reason, moderator, timestamp, or case ID. Ban, kick, and timeout commands call Discord directly. The Logging cog in bot/cogs/commands/logging.py uses configured channels and Discord audit-log lookups to create human-readable guild logs; it is not a structured case database.
+The earlier Zyrix&Dash source assessment (external to this repository) described a Python discord.py bot under bot/ with cogs registered by bot/cogs/__init__.py. Revalidate these details against the target Zyrix revision before implementation. Local warn state in bot/cogs/moderation/warn.py is a count keyed by guild/user; it does not persist reason, moderator, timestamp, or case ID. Ban, kick, and timeout commands call Discord directly. The Logging cog in bot/cogs/commands/logging.py uses configured channels and Discord audit-log lookups to create human-readable guild logs; it is not a structured case database.
 
 bot/cogs/commands/owner2.py contains an owner-only global GB command. It builds a cached list of mutual guilds, asks the command author to confirm, then attempts a ban in each mutual guild and reports names/counts in messages. It has no SADA opt-in, durable review record, distinct reviewer approval, or durable per-guild outcome ledger. It is not the proposed SADA workflow and is not a safe substitute for it.
 
-AntiNuke exists separately under bot/cogs/antinuke/ and is registered from bot/cogs/__init__.py. It reads local enable/whitelist state from SQLite and handles Discord events using audit-log lookups. Some handlers immediately ban, kick, unban, or otherwise remediate locally. In particular, current bot/cogs/antinuke/antiprune.py uses the latest prune audit entry and can ban its executor; this path does not use the safer target-specific correlation helper described in the earlier standalone Phase 1 repository report. Do not assume the separate zyrix-main branch fixes are present in this monorepo checkout. A SADA integration must not delay or weaken this current local protection.
+That assessment also described AntiNuke under bot/cogs/antinuke/ and is registered from bot/cogs/__init__.py. It reads local enable/whitelist state from SQLite and handles Discord events using audit-log lookups. Some handlers immediately ban, kick, unban, or otherwise remediate locally. In particular, the assessed bot/cogs/antinuke/antiprune.py used the latest prune audit entry and can ban its executor; the assessment did not find the safer target-specific correlation helper described in an earlier standalone Phase 1 report. These observations may be stale. A SADA integration must not delay or weaken local protection.
 
 There is no SADA endpoint in the bot's embedded FastAPI service, no cross-server incident ledger, no general migration framework, and no central case ID implementation in the inspected moderation paths.
 
@@ -65,3 +100,13 @@ These must be approved and versioned before implementation:
 ## Suggested central registry channels
 
 The official Zyrix staff server may create private channels such as #sada-global-registry, #sada-global-alerts, and #sada-case-files. These are proposed names only. The SADA database remains the source of truth.
+
+## Cross-module integration
+
+Global Ban consumes reviewed cases, provenance, quality factors, appeals and corrections; it owns no duplicate incident/evidence ledger.
+
+- [Threat Network](../threat-intelligence-network/README.md), [Trust Engine](../trust-and-reliability-engine/README.md), [Timeline](../incident-timeline/README.md), and [Evidence Vault](../evidence-vault/README.md) provide scoped context.
+- [Advisories](../security-advisory-network/README.md), [Playbooks](../emergency-response-playbooks/README.md), and [Impact Simulator](../attack-impact-simulator/README.md) support decisions.
+- Canonical [event](../shared-standards/01-event-schema-standard.md), [case](../shared-standards/05-case-lifecycle-standard.md), and [audit](../shared-standards/08-audit-record-standard.md) rules apply.
+
+Five-guild and 5,000-member suggestions remain unresolved; see [decision register](../implementation-roadmap/06-open-questions-and-decisions.md).

@@ -1,4 +1,8 @@
+> **Repository scope:** Proposed design only. SADA contains no Zyrix Bot source. Any bot/ paths below describe an earlier Zyrix&Dash assessment and must be revalidated against the target revision before implementation.
+
 # 01 — Overview and objectives
+
+**Status: proposed technical specification; not implemented.**
 
 ## Product intent
 
@@ -53,11 +57,11 @@ These statuses track evidence lifecycle. The separately stored reason-category r
 
 Before enabling any SADA feature, a guild administrator must see a plain-language disclosure describing each event field, destination, retention, reviewer access, and enforcement effect. Separate toggles should govern incident sharing, intelligence receipt, local alert delivery, and global enforcement. New installations start with every SADA toggle off. Pausing or leaving stops new transmissions and future enforcement; handling previously submitted records follows the approved retention/correction policy and must be explained at opt-in.
 
-## Current versus proposed
+## Historical source assessment versus proposed design
 
-**Current code:** bot/ is a Python discord.py bot with explicit cog registration and an optional FastAPI server. Moderation is mostly direct callbacks; warn stores only a guild/user count. Logging creates configured guild messages after events but does not persist a structured case ledger. AntiNuke processes local Discord events/audit logs and may perform local responses. owner2.py has an owner-only global GB flow that acts over mutual guilds after one confirmation and stores no durable SADA review/result ledger.
+**Historical Zyrix source assessment (not part of this repository):** bot/ was a Python discord.py bot with explicit cog registration and an optional FastAPI server. Moderation is mostly direct callbacks; warn stores only a guild/user count. Logging creates configured guild messages after events but does not persist a structured case ledger. AntiNuke processes local Discord events/audit logs and may perform local responses. owner2.py has an owner-only global GB flow that acts over mutual guilds after one confirmation and stores no durable SADA review/result ledger.
 
-**Proposed SADA:** an independent Rust service and database receive only authorized structured events, classify reasons with provenance/uncertainty, correlate evidence across opted-in sources, manage cases/reviews/appeals, and send recommendations/approved decision signals. Zyrix Bot owns all Discord interactions and enforces local policies. See [independent engine architecture](../architecture/independent-sada-engine.md).
+**Proposed SADA:** an independent Rust service and database receive only authorized structured events, classify reasons with provenance/uncertainty, correlate evidence across opted-in sources, manage cases/reviews/appeals, and send recommendations/approved decision signals. Zyrix Bot owns all Discord interactions and enforces local policies. See [independent engine architecture](../../architecture/independent-sada-engine.md).
 
 ## Trust principles
 

@@ -1,5 +1,7 @@
 # Implementation Roadmap
 
+**Status: proposed technical specification; not implemented.**
+
 This roadmap is a proposal. No phase below is implemented by creating this blueprint.
 
 ## Phase 1: Independent foundation and policy

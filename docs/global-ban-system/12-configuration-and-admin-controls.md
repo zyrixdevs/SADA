@@ -1,5 +1,7 @@
 # Configuration and Admin Controls
 
+**Status: proposed technical specification; not implemented.**
+
 ## Participation is explicit
 
 Installing Zyrix does not enable SADA. Guild owners or administrators must opt into each distinct capability. Recommended independent controls are:

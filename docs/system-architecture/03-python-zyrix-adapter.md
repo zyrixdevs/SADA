@@ -1,0 +1,3 @@
+# 03 — Python Zyrix adapter
+
+Proposed adapter owns Discord capture, guild consent, durable local submission queue, service auth, signal receipt, live checks, Discord calls and receipts. SADA never receives bot token. Submit moderation incidents only after success; AntiNuke signals are distinct and enqueue after local response without waiting for SADA. Never invent missing actor/reason. Existing Zyrix storage is feature-specific SQLite/JSON, so adapter persistence/migration is an implementation decision. Recheck consent, case revision, membership, actor/bot permissions, hierarchy, exception and idempotency for every action. Test outage isolation with fake Discord.

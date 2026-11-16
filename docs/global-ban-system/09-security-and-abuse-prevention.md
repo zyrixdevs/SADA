@@ -1,5 +1,7 @@
 # Security and Abuse Prevention
 
+**Status: proposed technical specification; not implemented.**
+
 SADA is a cross-server moderation intelligence system and therefore treats every participating server, moderator, event, and service boundary as potentially fallible.
 
 ## Trust boundaries

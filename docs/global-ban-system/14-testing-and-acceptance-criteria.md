@@ -1,5 +1,7 @@
 # Testing and Acceptance Criteria
 
+**Status: proposed technical specification; not implemented.**
+
 Tests use fake Discord objects, deterministic clocks, a temporary database, and service mocks. No test uses production credentials, live guilds, or actual moderation API calls.
 
 ## Incident collection

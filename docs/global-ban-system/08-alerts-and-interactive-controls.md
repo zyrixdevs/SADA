@@ -1,5 +1,7 @@
 # Alerts and Interactive Controls
 
+**Status: proposed technical specification; not implemented.**
+
 ## Delivery eligibility
 
 SADA alerts are guild-specific. Before creating or delivering one, Zyrix Bot checks that the target is currently in that guild. Do not notify every server owner or DM administrators. If membership cannot be determined reliably, mark delivery as unavailable and retry or leave it for staff review; do not assume membership.

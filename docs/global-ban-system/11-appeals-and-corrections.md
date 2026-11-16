@@ -1,5 +1,7 @@
 # Appeals and Corrections
 
+**Status: proposed technical specification; not implemented.**
+
 ## Appeal intake
 
 A user may submit an appeal of a global decision through a future verified channel. The appeal should reference the SADA case ID and identify the challenged decision; avoid requiring the appellant to disclose unrelated personal data. Intake creates a durable appeal record and acknowledges receipt without promising an outcome or timeline until service policy is approved.

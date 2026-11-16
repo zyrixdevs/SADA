@@ -1,0 +1,3 @@
+# 02 — Threat model
+
+Assets: credentials, consent, identity links, reasons, evidence, votes, cases, keys, audit. Adversaries: abusive server, compromised installation, malicious moderator/reviewer/operator, API client, coordinated reporter, analyzer compromise. Boundaries: Discord attribution; service auth/replay; intake validation; evidence/key; correlation poisoning; reviewer privilege; signal confused deputy; API tenant isolation. Mitigate with bounded schema, scoped identity, independence, idempotency, versioned rules, quorum, live bot checks, encryption, read audit, rate limits, corrections, circuit breaker, restore tests. Residual audit ambiguity, collusion, identity error, reviewer compromise remain; show uncertainty and appeal.

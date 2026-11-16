@@ -1,5 +1,7 @@
 # Audit Logs and Case Management
 
+**Status: proposed technical specification; not implemented.**
+
 ## Source of truth
 
 The SADA structured database is authoritative. A proposed private Zyrix operations server may use `#sada-global-registry`, `#sada-global-alerts`, and `#sada-case-files` as readable views; these names are proposals, not existing channels. Discord messages are not the source of truth and must be rebuildable from durable records.

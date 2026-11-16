@@ -1,5 +1,7 @@
 # Future Expansion
 
+**Status: proposed technical specification; not implemented.**
+
 Every item below is a future proposal, not an existing Zyrix or SADA feature. SADA should extend cross-server intelligence without cloning local AutoMod, AntiNuke, moderation, or logging.
 
 | Proposal | SADA role | Boundary with existing Zyrix features |

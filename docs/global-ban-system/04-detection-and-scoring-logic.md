@@ -1,5 +1,7 @@
 # 04 — Detection and scoring logic
 
+**Status: proposed technical specification; not implemented.**
+
 ## Reason-first analysis
 
 Raw punishment counts alone are too weak. SADA should prioritize the reason category and supporting evidence: four independent, well-supported scam/phishing actions may represent a repeated pattern; four unrelated interpersonal disputes should not receive the same classification.

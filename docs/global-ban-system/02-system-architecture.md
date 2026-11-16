@@ -1,8 +1,12 @@
+> **Repository scope:** Proposed design only. SADA contains no Zyrix Bot source. Any bot/ paths below describe an earlier Zyrix&Dash assessment and must be revalidated against the target revision before implementation.
+
 # 02 — System architecture
 
-## Current workspace facts
+**Status: proposed technical specification; not implemented.**
 
-The opened workspace is the Zyrix&Dash monorepo on branch main, with the Python bot in bot/. The bot is an AutoShardedBot with a single configured shard in the inspected core/zyrix.py and loads cogs through bot/cogs/__init__.py. That file imports and adds AntiNuke, moderation, Logging, and owner command cogs. The bot embeds an optional FastAPI application in main.py. Feature state is spread across SQLite databases and JSON files; there is no general database migration or case-management layer.
+## Prior Zyrix source checkout assessment — revalidate before implementation
+
+The earlier Zyrix&Dash source assessment inspected a monorepo checkout with the Python bot in bot/. It described an AutoShardedBot with a single configured shard in core/zyrix.py and explicit cog registration through bot/cogs/__init__.py. These observations are historical and must be revalidated against the implementation revision. That file imports and adds AntiNuke, moderation, Logging, and owner command cogs. The bot embeds an optional FastAPI application in main.py. Feature state is spread across SQLite databases and JSON files; there is no general database migration or case-management layer.
 
 Current moderation integration points:
 
