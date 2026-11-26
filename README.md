@@ -29,8 +29,10 @@ Rust is proposed for independent SADA Core; PostgreSQL is proposed as the author
 - [Security and governance](docs/security-and-governance/README.md)
 - [Shared standards](docs/shared-standards/README.md)
 - [Implementation roadmap and open decisions](docs/implementation-roadmap/README.md)
+- [Development path](PATH.md) — staged plan and completion gates.
 - [Full documentation index](docs/README.md)
 - [Engineering standards and CI/CD plan](docs/engineering/README.md)
+- [AI contributor guide](AGENTS.md) and [implementation handoff](docs/ai/IMPLEMENTATION-HANDOFF.md)
 
 ## Feature modules
 

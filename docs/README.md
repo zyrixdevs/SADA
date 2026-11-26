@@ -6,6 +6,8 @@ SADA is a proposed independent security intelligence platform for explicitly opt
 
 ## Start here
 
+- [Project development path](../PATH.md) — current status, delivery stages, and gates.
+- [AI implementation handoff](ai/IMPLEMENTATION-HANDOFF.md) and [AI contributor references](ai/README.md).
 - [System architecture](system-architecture/README.md)
 - [Security and governance](security-and-governance/README.md)
 - [Shared standards](shared-standards/README.md)

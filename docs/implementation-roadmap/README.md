@@ -2,6 +2,8 @@
 
 **Proposal only.** Governance/contracts -> Rust/PostgreSQL -> Python adapter -> evidence/case/appeals -> reviewed intelligence -> detection/simulation -> controlled response/recovery -> sensitive intelligence/public surface. See phases, dependencies, milestones, testing/release, operations and decisions.
 
+The consolidated staged path and completion gates are in the [project PATH](../../PATH.md). AI assistants should also follow the [implementation handoff](../ai/IMPLEMENTATION-HANDOFF.md) and [repository agent rules](../../AGENTS.md).
+
 ## 49-module planning scope
 
 The 30 additions are sequenced by shared prerequisites rather than treated as 30 independent services. First establish consent, tenant authorization, event/evidence/correction contracts, inbox/outbox and audit. Then build read-only identity, bot, configuration, moderation-integrity and abuse observations. Add URL/file/feed intelligence only after isolated egress and evidence controls. Add sensitive external sharing, operator workflows and optional AI only after governance and security review.

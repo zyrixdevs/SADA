@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 EXPECTED_MODULE_COUNT = 49
 NON_MODULE_DIRECTORIES = {
+    "ai",
     "engineering",
     "implementation-roadmap",
     "security-and-governance",
